@@ -48,10 +48,21 @@ try {
             echo'</td> 
             <td>'.$Registro["Fecha_Nacimiento"].'</td>
             <td><a href="ActualizacionEstudiantes.php?Codigo_Estudiante='.$Registro["Codigo_Estudiante"].'"> Editar</a></td>
-            <td> <a href= "Estudiantes.php?Codigo_Estudiante='.$Registro["Codigo_Estudiante"].'">Eliminar</a></td>
+            <td><a href= "#" onclick="preguntar('.$Registro["Codigo_Estudiante"].')">Eliminar</a></td>
         </tr>';
-    }//fin del ciclo de listado de especialidades
+    }//fin del ciclo de listado de estudiantes
     echo '</table>';
  }
  
 ?>
+
+<script type="text/javascript">
+    function preguntar(Codigo_Estudiante)
+    {
+        if(confirm("¿Esta seguro de eliminar el estudiante con codigo "+Codigo_Estudiante+" ?"))
+        {
+            window.location.href = "Estudiantes.php?Codigo_Estudiante="+Codigo_Estudiante;
+        }
+
+    }
+</script>

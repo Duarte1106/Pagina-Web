@@ -50,7 +50,7 @@ else if (!empty($_POST["Codigo_Estudiante"]) && !empty($_POST["Primer_Nombre"]) 
                     //die($mysqli_error($Conexion));
                 }
     else { $Mensaje = "El estudiante se actualizo correctamente";
-    //header('Location: estudiantes.php');
+    header('Location: estudiantes.php');
     }
     
 } // fin del if 

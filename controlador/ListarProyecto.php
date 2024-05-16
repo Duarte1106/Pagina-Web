@@ -11,7 +11,7 @@ try {
  catch (Exception $e)
      { $Mensaje = "No se pudo consultar el proyecto";
         // $error = $e -> getMessage();
-        print $e -> getMessage();
+        //print $e -> getMessage();
         //print $Resultado;
      }
  if($Resultado == False) { $Mensaje = "No se pudo consultar el proyecto";
@@ -33,11 +33,23 @@ try {
             <td>'.$Registro["Nombre_Proyecto"].'</td>
             <td>'.$Registro["Resumen"].'</td>
             <td>'.$Registro["Fecha_Registro"].'</td>
-            <td>Editar</td>
-            <td>Eliminar</td>
+            <td><a href="ActualizacionProyecto.php?Codigo_Proyecto='.$Registro["Codigo_Proyecto"].'"> Editar</a></td>
+            <td><a href= "#" onclick="preguntar('.$Registro["Codigo_Proyecto"].')">Eliminar</a></td>
         </tr>';
     }//fin del ciclo de listado de especialidades
     echo '</table>';
  }
  
 ?>
+
+
+<script type="text/javascript">
+    function preguntar(Codigo_Proyecto)
+    {
+        if(confirm("¿Esta seguro de eliminar el proyecto con codigo "+Codigo_Proyecto+" ?"))
+        {
+            window.location.href = "Proyectos.php?Codigo_Proyecto="+Codigo_Proyecto;
+        }
+
+    }
+</script>

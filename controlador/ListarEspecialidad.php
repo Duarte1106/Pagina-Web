@@ -10,7 +10,7 @@ try {
  catch (Exception $e)
      { $Mensaje = "No se pudo consultar la especialidad";
         // $error = $e -> getMessage();
-        print $e -> getMessage();
+        //print $e -> getMessage();
         //print $Resultado;
      }
  if($Resultado == False) { $Mensaje = "No se pudo consultar la especialidad";
@@ -28,11 +28,22 @@ try {
         <tr>
             <td>'.$Registro["Codigo_Especialidad"].'</td>
             <td>'.$Registro["Nombre_Especialidad"].'</td>
-            <td>Editar</td>
-            <td>Eliminar</td>
+            <td><a href="ActualizacionEspecialidad.php?Codigo_Especialidad='.$Registro["Codigo_Especialidad"].'"> Editar</a></td>
+            <td><a href= "#" onclick="preguntar('.$Registro["Codigo_Especialidad"].')">Eliminar</a></td>
         </tr>';
     }//fin del ciclo de listado de especialidades
     echo '</table>';
  }
  
 ?>
+
+<script type="text/javascript">
+    function preguntar(Codigo_Especialidad)
+    {
+        if(confirm("¿Esta seguro de eliminar la especialidad con codigo "+Codigo_Especialidad+" ?"))
+        {
+            window.location.href = "Especialidades.php?Codigo_Especialidad="+Codigo_Especialidad;
+        }
+
+    }
+</script>

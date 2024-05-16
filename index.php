@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Regristo de proyecto</title>
-</head>
-
-<body>
-  <h1>GESTION DE PROYECTOS</h1>
-
-  <nav>
-    <ul>
-     <li><a href="vista/Proyectos.php">Proyectos</a></li>
-     <li><a href="vista/Estudiantes.php">Estudiantes</a></li>
-     <li><a href="vista/Especialidades.php">Especialidades</a></li>
-    </ul>
-  </nav>
-
-  <h4>By: Joel Duarte</h4>
-</body>
-</html>
+<?php
+include("vista/Navegacion.php");
+echo '
+<h1>SISTEMA PARA LA GESTION DE PROYECTOS DE ESPECIALIDAD</h1>
+<img src="https://iesanfranciscodesales.edu.co/web/wp-content/uploads/2019/06/IMG_0735_mod-270x300.png" alt="SFS"><br>
+';
+include("vista/Footer.php");
+?>
